@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu painel de tarefas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <body>
+
+        <div class="glitter"></div>
+        
+        <div class="painel-principal">
+    
+            
+            <div class="lado-esquerdo">
+    
+                
+                <div class="caixa-nova-pagina">
+    
+                    <h2>Meu espaço</h2>
+    
+                    <button onclick="window.location.href='outra-pagina.html'">
+                        Me conheça!
+                    </button>
+    
+                </div>
+    
+    
+                
+                <div class="data-hora">
+    
+                    <div id="data"></div>
+    
+                    <div id="hora"></div>
+    
+                </div>
+    
+            </div>
+    
+    
+            
+            <div class="cartao-aplicacao">
+    
+                <header class="cabecalho-aplicacao">
+    
+                    <h1>Minhas Tarefas</h1>
+    
+                    <button
+                        class="botao-icone"
+                        id="botao-alternar-tema"
+                    >
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+    
+                </header>
+    
+    
+               
+                <div class="caixa-entrada">
+    
+                    <input
+                        type="text"
+                        id="campo-tarefa"
+                        placeholder="O que vamos fazer hoje?..."
+                        maxlength="40"
+                    >
+    
+                    <button
+                        class="botao-principal"
+                        id="botao-adicionar"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Adicionar
+                    </button>
+    
+                </div>
+    
+    
+               
+                <ul
+                    class="lista-tarefas"
+                    id="lista-tarefas"
+                >
+                    
+                </ul>
+    
+    
+                
+                <footer class="rodape-aplicacao">
+    
+                    <span id="contador-tarefas">
+                        0 tarefas na lista
+                    </span>
+    
+                </footer>
+    
+            </div>
+    
+        </div>
+    
+    
+        <script src="script.js"></script>
+    
+    
+        <!-- RELÓGIO -->
+        <script>
+    
+            function atualizarDataHora() {
+    
+                const agora = new Date();
+    
+                const data = agora.toLocaleDateString("pt-BR");
+    
+                const hora = agora.toLocaleTimeString(
+                    "pt-BR",
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    }
+                );
+    
+                document.getElementById("data").textContent = data;
+    
+                document.getElementById("hora").textContent = hora;
+    
+            }
+    
+    
+            atualizarDataHora();
+    
+            setInterval(atualizarDataHora, 1000);
+    
+        </script>
+    
+    </body>
+    
+</body>
+
+</html>
